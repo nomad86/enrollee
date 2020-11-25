@@ -1,0 +1,24 @@
+<div class="enrollee-container">
+
+  <mat-card *ngFor="let enrollee of enrolleeList" class="enrollee-card mat-elevation-z10">
+
+
+    <div class="card-title d-flex justify-content-between">
+      <div [ngStyle]="getStatusStyle(enrollee.active)">{{enrollee.name}}</div>
+      <div>{{getStatus(enrollee.active)}}</div>
+    </div>
+
+    <mat-card-actions class="enrollee-actions">
+
+      <button mat-raised-button color="primary" [routerLink]="['/', enrollee.id]">
+        VIEW
+      </button>
+
+      <button mat-mini-fab color="accent">
+        <mat-icon class="add-enrollee-btn" (click)="editEnrollee(enrollee)">Edit</mat-icon>
+      </button>
+
+    </mat-card-actions>
+
+  </mat-card>
+</div>

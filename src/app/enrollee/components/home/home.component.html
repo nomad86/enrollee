@@ -1,0 +1,10 @@
+<div class="header">
+  <h2 class="title">All Enrollees</h2>
+</div>
+
+<div class="spinner-container" *ngIf="!(loading$ | async )">
+  <mat-spinner></mat-spinner>
+</div>
+
+<app-enrollee-list (enrolleeChanged)="reload()" [enrolleeList]="enrolleeList$ | async">
+</app-enrollee-list>
